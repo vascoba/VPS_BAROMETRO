@@ -1,0 +1,60 @@
+name: Atualizar barómetro
+
+on:
+  schedule:
+    # Dias úteis, de 2 em 2 horas (06h–18h UTC = 06h–18h/07h–19h em Lisboa, conforme inverno/verão)
+    - cron: "0 6-18/2 * * 1-5"
+    # Fins de semana, uma vez por dia
+    - cron: "0 9 * * 0,6"
+  workflow_dispatch: {}          # botão "Run workflow" para atualizar à mão
+  push:
+    branches: [main]
+    paths: ["site/**", "scripts/**", "config/**", ".github/workflows/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: barometro
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Testes
+        run: python -m unittest discover -s tests
+
+      - name: Ir buscar os dados às fontes (INE, BPstat, Eurostat)
+        run: python scripts/update.py
+
+      - name: Guardar no repositório só se os dados mudaram
+        run: |
+          git config user.name  "barometro-bot"
+          git config user.email "barometro-bot@users.noreply.github.com"
+          git add site/data.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Dados atualizados automaticamente"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
