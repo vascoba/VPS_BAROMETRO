@@ -1,0 +1,34 @@
+{
+  "grupos": [
+    {"id": "imobiliario", "titulo": "Imobiliário"},
+    {"id": "macro", "titulo": "Macroeconomia"}
+  ],
+  "series": [
+    {"id": "INE_0012248", "grupo": "imobiliario", "titulo": "Avaliação bancária na habitação (mediana)", "unidade": "€/m²", "casas": 0, "fonte": "INE", "codigo": "0012248", "freq": "M", "var": "pct", "ine_rotulo": ["total"]},
+    {"id": "INE_0014767", "grupo": "imobiliario", "titulo": "Índice de Preços da Habitação — variação homóloga", "unidade": "%", "casas": 1, "fonte": "INE", "codigo": "0014767", "freq": "T", "var": "pp", "ine_rotulo": ["total"]},
+    {"id": "INE_0012785", "grupo": "imobiliario", "titulo": "Transações de habitações (número)", "unidade": "", "casas": 0, "fonte": "INE", "codigo": "0012785", "freq": "T", "var": "pct", "ine_rotulo": ["total"]},
+    {"id": "INE_0012239", "grupo": "imobiliario", "titulo": "Preço mediano de venda (trimestre)", "unidade": "€/m²", "casas": 0, "fonte": "INE", "codigo": "0012239", "freq": "T", "var": "pct", "ine_rotulo": ["total"]},
+    {"id": "INE_0014706", "grupo": "imobiliario", "titulo": "Renda mediana de novos contratos (trimestre)", "unidade": "€/m²", "casas": 2, "fonte": "INE", "codigo": "0014706", "freq": "T", "var": "pct", "ine_rotulo": ["total"]},
+    {"id": "INE_0012096", "grupo": "imobiliario", "titulo": "Edifícios licenciados (mês)", "unidade": "", "casas": 0, "fonte": "INE", "codigo": "0012096", "freq": "M", "var": "pct", "ine_rotulo": ["total"]},
+    {"id": "INE_0011748", "grupo": "imobiliario", "titulo": "Índice de custo de construção de habitação nova", "unidade": "base 2021 = 100", "casas": 2, "fonte": "INE", "codigo": "0011748", "freq": "M", "var": "pct", "ine_rotulo": ["total"]},
+    {"id": "INE_0006339", "grupo": "imobiliario", "titulo": "Taxa de juro implícita no crédito à habitação (todos os contratos)", "unidade": "%", "casas": 3, "fonte": "INE", "codigo": "0006339", "freq": "M", "var": "pp", "ine_rotulo": ["em vigor", "/ total"]},
+    {"id": "BPSTAT_12748362", "grupo": "imobiliario", "titulo": "Taxa de juro (TAA) de novos contratos de crédito à habitação", "unidade": "%", "casas": 2, "fonte": "BPstat", "codigo": "12748362", "freq": "M", "var": "pp"},
+    {"id": "EUROSTAT_PT", "grupo": "imobiliario", "titulo": "Preços da habitação: Portugal e UE (variação anual)", "unidade": "%", "casas": 1, "fonte": "Eurostat", "codigo": "PT", "freq": "T", "var": "pp",
+     "comparar": {"id": "EUROSTAT_EU27", "rotulo": "UE27", "codigo": "EU27_2020"}},
+
+    {"id": "BPSTAT_12518283", "grupo": "macro", "subgrupo": "Crescimento", "titulo": "PIB a preços correntes", "unidade": "M€", "casas": 0, "fonte": "BPstat", "codigo": "12518283", "freq": "T", "var": "pct"},
+    {"id": "BPSTAT_12518314", "grupo": "macro", "subgrupo": "Crescimento", "titulo": "Crescimento real do PIB — variação homóloga", "unidade": "%", "casas": 1, "fonte": "BPstat", "codigo": "12518314", "freq": "T", "var": "pp"},
+    {"id": "BPSTAT_12518285", "grupo": "macro", "subgrupo": "Crescimento", "titulo": "Consumo privado a preços correntes", "unidade": "M€", "casas": 0, "fonte": "BPstat", "codigo": "12518285", "freq": "T", "var": "pct"},
+    {"id": "BPSTAT_5739222", "grupo": "macro", "subgrupo": "Preços e emprego", "titulo": "Inflação (IHPC) — variação homóloga", "unidade": "%", "casas": 1, "fonte": "BPstat", "codigo": "5739222", "freq": "M", "var": "pp"},
+    {"id": "BPSTAT_5739374", "grupo": "macro", "subgrupo": "Preços e emprego", "titulo": "Taxa de desemprego (16-74 anos)", "unidade": "%", "casas": 1, "fonte": "BPstat", "codigo": "5739374", "freq": "T", "var": "pp"},
+    {"id": "BPSTAT_12561508", "grupo": "macro", "subgrupo": "Contas públicas", "titulo": "Dívida pública (mensal)", "unidade": "M€", "casas": 0, "fonte": "BPstat", "codigo": "12561508", "freq": "M", "var": "pct"},
+    {"id": "BPSTAT_12561507", "grupo": "macro", "subgrupo": "Contas públicas", "titulo": "Dívida pública em % do PIB", "unidade": "% PIB", "casas": 1, "fonte": "BPstat", "codigo": "12561507", "freq": "T", "var": "pp"},
+    {"id": "BPSTAT_12561965", "grupo": "macro", "subgrupo": "Contas públicas", "titulo": "Saldo orçamental das administrações públicas", "unidade": "% PIB", "casas": 1, "fonte": "BPstat", "codigo": "12561965", "freq": "T", "var": "pp"},
+    {"id": "BPSTAT_12645652", "grupo": "macro", "subgrupo": "Contas públicas", "titulo": "Receita das administrações públicas", "unidade": "% PIB", "casas": 1, "fonte": "BPstat", "codigo": "12645652", "freq": "T", "var": "pp"},
+    {"id": "BPSTAT_12645671", "grupo": "macro", "subgrupo": "Contas públicas", "titulo": "Despesa das administrações públicas", "unidade": "% PIB", "casas": 1, "fonte": "BPstat", "codigo": "12645671", "freq": "T", "var": "pp"},
+    {"id": "BPSTAT_12504591", "grupo": "macro", "subgrupo": "Juros", "titulo": "Taxa BCE — facilidade de depósito", "unidade": "%", "casas": 2, "fonte": "BPstat", "codigo": "12504591", "freq": "E", "var": "pp"},
+    {"id": "BPSTAT_12099464", "grupo": "macro", "subgrupo": "Juros", "titulo": "Yield das obrigações do Tesouro a 10 anos", "unidade": "%", "casas": 2, "fonte": "BPstat", "codigo": "12099464", "freq": "M", "var": "pp"},
+    {"id": "BPSTAT_13168436", "grupo": "macro", "subgrupo": "Juros", "titulo": "Euribor a 3 meses", "unidade": "%", "casas": 3, "fonte": "BPstat", "codigo": "13168436", "freq": "M", "var": "pp"},
+    {"id": "BPSTAT_13168438", "grupo": "macro", "subgrupo": "Juros", "titulo": "Euribor a 6 meses", "unidade": "%", "casas": 3, "fonte": "BPstat", "codigo": "13168438", "freq": "M", "var": "pp"}
+  ]
+}
